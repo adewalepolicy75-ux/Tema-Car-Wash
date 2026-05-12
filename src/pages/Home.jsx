@@ -76,61 +76,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* STATS SECTION */}
-        <section className="stats">
-          <div className="card">
-            <div className="icon blue">
-              <FileText />
-            </div>
-
-            <h2>24</h2>
-            <h3>Applied</h3>
-
-            <p>Keep applying consistently.</p>
-
-            <div className="line blue-line"></div>
-          </div>
-
-          <div className="card">
-            <div className="icon green">
-              <Target />
-            </div>
-
-            <h2>8</h2>
-            <h3 className="green-text">Interviews</h3>
-
-            <p>Companies are noticing you.</p>
-
-            <div className="line green-line"></div>
-          </div>
-
-          <div className="card">
-            <div className="icon orange">
-              <PartyPopper />
-            </div>
-
-            <h2>3</h2>
-            <h3 className="orange-text">Offers</h3>
-
-            <p>You’re getting opportunities.</p>
-
-            <div className="line orange-line"></div>
-          </div>
-
-          <div className="card">
-            <div className="icon red">
-              <XCircle />
-            </div>
-
-            <h2>5</h2>
-            <h3 className="red-text">Rejections</h3>
-
-            <p>Every rejection is progress.</p>
-
-            <div className="line red-line"></div>
-          </div>
-        </section>
-
         {/* JOB LISTINGS SECTION */}
         <section className="job-listings">
           <div className="section-header">
@@ -248,6 +193,64 @@ export default function Home() {
                 <button className="apply-job-btn">Apply Now →</button>
               </div>
             </div>
+          </div>
+        </section>
+     
+        {/* STATS SECTION */}
+        <section className="stats">
+
+     
+
+          <div className="card">
+            <div className="icon blue">
+              <FileText />
+            </div>
+
+            <h2>24</h2>
+            <h3>Applied</h3>
+
+            <p>Keep applying consistently.</p>
+
+            <div className="line blue-line"></div>
+          </div>
+
+          <div className="card">
+            <div className="icon green">
+              <Target />
+            </div>
+
+            <h2>8</h2>
+            <h3 className="green-text">Interviews</h3>
+
+            <p>Companies are noticing you.</p>
+
+            <div className="line green-line"></div>
+          </div>
+
+          <div className="card">
+            <div className="icon orange">
+              <PartyPopper />
+            </div>
+
+            <h2>3</h2>
+            <h3 className="orange-text">Offers</h3>
+
+            <p>You’re getting opportunities.</p>
+
+            <div className="line orange-line"></div>
+          </div>
+
+          <div className="card">
+            <div className="icon red">
+              <XCircle />
+            </div>
+
+            <h2>5</h2>
+            <h3 className="red-text">Rejections</h3>
+
+            <p>Every rejection is progress.</p>
+
+            <div className="line red-line"></div>
           </div>
         </section>
 
