@@ -58,7 +58,7 @@ export default function Home() {
           <div className="hero-right">
             <div className="logo-container">
               <img
-                src="public/images/Temalogo.png"
+                src="/images/Temalogo.png"
                 alt="JobFlow Logo"
                 className="hero-logo-image"
               />
