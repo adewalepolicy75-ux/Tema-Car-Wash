@@ -142,12 +142,12 @@ export default function Home() {
             {/* Job 1 - Washer */}
             <div className="job-card-glass">
               <img
-                src="public/images/carWasher.png"
+                src="/images/carWasher.png"
                 alt="Car Washer"
                 className="job-image"
                 onError={(e) => {
                   e.target.src =
-                    "https://placehold.co/400x200/2563EB/white?text=Car+Washer";
+                    "https://placehold.co/400x200/2563EB/white?text=carWasher";
                 }}
               />
               <div className="job-content">
@@ -164,12 +164,12 @@ export default function Home() {
             {/* Job 2 - Accountant */}
             <div className="job-card-glass">
               <img
-                src="public/images/accountant.png"
+                src="/images/accountant.png"
                 alt="Accountant"
                 className="job-image"
                 onError={(e) => {
                   e.target.src =
-                    "https://placehold.co/400x200/F59E0B/white?text=Accountant";
+                    "https://placehold.co/400x200/F59E0B/white?text=accountant";
                 }}
               />
               <div className="job-content">
@@ -186,12 +186,12 @@ export default function Home() {
             {/* Job 3 - Manager */}
             <div className="job-card-glass">
               <img
-                src="public/images/manager.png"
+                src="/images/manager.png"
                 alt="Operations Manager"
                 className="job-image"
                 onError={(e) => {
                   e.target.src =
-                    "https://placehold.co/400x200/F59E0B/white?text=Manager";
+                    "https://placehold.co/400x200/F59E0B/white?text=manager";
                 }}
               />
               <div className="job-content">
