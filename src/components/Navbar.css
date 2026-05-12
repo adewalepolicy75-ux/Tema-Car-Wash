@@ -2,21 +2,130 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 50px;
+  padding: 16px 24px;
   background: white;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.dark-mode .navbar {
+  background: #1E293B;
+  border-bottom-color: #334155;
+}
+
+.navbar h2 {
+  color: #2563EB;
+  margin: 0;
 }
 
 .links {
   display: flex;
-  gap: 25px;
+  gap: 24px;
 }
 
 .links a {
   text-decoration: none;
-  color: #0f172a;
-  font-weight: 600;
+  color: #64748B;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: all 0.2s;
 }
 
 .links a:hover {
-  color: #2563eb;
+  color: #2563EB;
+}
+
+.links a.active {
+  color: #2563EB;
+  font-weight: 600;
+  border-bottom: 2px solid #2563EB;
+}
+
+.dark-mode .links a {
+  color: #94A3B8;
+}
+
+.dark-mode .links a:hover,
+.dark-mode .links a.active {
+  color: #60A5FA;
+}
+
+.dark-mode .links a.active {
+  border-bottom-color: #60A5FA;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748B;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.hamburger:hover {
+  background-color: #F1F5F9;
+}
+
+.dark-mode .hamburger {
+  color: #94A3B8;
+}
+
+.dark-mode .hamburger:hover {
+  background-color: #334155;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dark-mode .mobile-menu {
+  background: #1E293B;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  padding: 12px 16px;
+  color: #0F172A;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.dark-mode .mobile-menu a {
+  color: #F8FAFC;
+}
+
+.mobile-menu a:hover {
+  background-color: #F1F5F9;
+}
+
+.dark-mode .mobile-menu a:hover {
+  background-color: #334155;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
 }
