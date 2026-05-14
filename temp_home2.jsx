@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+﻿// Home.jsx
+
 import "./Home.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { getListings, createJob } from "../services/api";
 
 import {
   FileText,
@@ -18,37 +16,6 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  const navigate = useNavigate();
-  const [listings, setListings] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const user = localStorage.getItem('user');
-
-  useEffect(() => {
-    fetchListings();
-  }, []);
-
-  const fetchListings = async () => {
-    try {
-      const response = await getListings();
-      setListings(response.data);
-    } catch (error) {
-      console.error('Failed to fetch listings', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleApplyClick = (job) => {
-    if (user) {
-      navigate('/apply', { state: { job } });
-    } else {
-      toast.error('Please login or signup to apply');
-      navigate('/signup');
-    }
-  };
-
-
-
   return (
     <>
       <Navbar />
@@ -57,7 +24,7 @@ export default function Home() {
         {/* TOP IMAGE BANNER - 1/3 of page */}
         <div className="top-image-banner">
           <img
-            src="/images/homeBG.png"
+            src="/images/homepage.png"
             alt="Car Wash Hero"
             className="top-hero-image"
           />
@@ -65,10 +32,12 @@ export default function Home() {
 
         {/* HERO */}
         <section className="hero">
+          {/* LEFT - Text Section */}
           <div className="hero-left">
             <div className="hero-badge">
-              🚗 Smart Job Tracking For Car Wash Workers
+              ≡ƒÜù Smart Job Tracking For Car Wash Workers
             </div>
+
             <div className="animated-text-container">
               <h1 className="animated-title">
                 Your Dream Job <br />
@@ -76,11 +45,16 @@ export default function Home() {
                 Your Next Wash.
               </h1>
             </div>
+
             <p>
               Track your applications, interviews, offers, and rejections in one
               beautiful dashboard built for car wash job seekers.
             </p>
+
+            {/* STATS SMALL */}
           </div>
+
+          {/* RIGHT - Logo Section */}
           <div className="hero-right">
             <div className="logo-container">
               <img
@@ -94,9 +68,8 @@ export default function Home() {
         </section>
 
         <div className="hero-buttons">
-          <button className="primary-btn" onClick={() => navigate(user ? '/dashboard' : '/signup')}>
-            Start Tracking Now
-          </button>
+          <button className="primary-btn">Start Tracking Now</button>
+
           <button className="secondary-btn">
             <PlayCircle size={20} />
             See How It Works
@@ -106,8 +79,8 @@ export default function Home() {
         {/* JOB LISTINGS SECTION */}
         <section className="job-listings">
           <div className="section-header">
-            <h2>📋 Available Jobs For You</h2>
-            <p>Browse and apply to these open positions at Tema Car Wash</p>
+            <h2>≡ƒôï Available Jobs For You</h2>
+            <p>Browse and apply to these open positions</p>
           </div>
 
           <div className="jobs-container">
@@ -128,8 +101,8 @@ export default function Home() {
                   Entry-level position. No experience needed. Full training
                   provided. Perfect for beginners starting their career.
                 </p>
-                <div className="job-badge">🎯 15+ openings</div>
-                <button className="apply-job-btn" onClick={() => handleApplyClick({_id: '507f1f77bcf86cd799439011', title: 'Car Washer'})}>Apply Now →</button>
+                <div className="job-badge">≡ƒÄ» 15+ openings</div>
+                <button className="apply-job-btn">Apply Now ΓåÆ</button>
               </div>
             </div>
 
@@ -150,8 +123,8 @@ export default function Home() {
                   Manage financial records, payroll, and bookkeeping. QuickBooks
                   experience preferred. CPA not required.
                 </p>
-                <div className="job-badge">💰 $45-60k/year</div>
-                <button className="apply-job-btn" onClick={() => handleApplyClick({_id: '507f1f77bcf86cd799439012', title: 'Accountant'})}>Apply Now →</button>
+                <div className="job-badge">≡ƒÆ░ $45-60k/year</div>
+                <button className="apply-job-btn">Apply Now ΓåÆ</button>
               </div>
             </div>
 
@@ -172,8 +145,8 @@ export default function Home() {
                   Lead daily operations, manage staff, ensure customer
                   satisfaction. 2+ years experience preferred.
                 </p>
-                <div className="job-badge">👔 $55-75k/year</div>
-                <button className="apply-job-btn" onClick={() => handleApplyClick({_id: '507f1f77bcf86cd799439013', title: 'Operations Manager'})}>Apply Now →</button>
+                <div className="job-badge">≡ƒæö $55-75k/year</div>
+                <button className="apply-job-btn">Apply Now ΓåÆ</button>
               </div>
             </div>
 
@@ -194,8 +167,8 @@ export default function Home() {
                   Maintain cleanliness of office and facility areas. Flexible
                   hours. Morning and evening shifts available.
                 </p>
-                <div className="job-badge">🧹 $14-18/hr</div>
-                <button className="apply-job-btn" onClick={() => handleApplyClick({_id: '507f1f77bcf86cd799439014', title: 'Office Cleaner'})}>Apply Now →</button>
+                <div className="job-badge">≡ƒº╣ $14-18/hr</div>
+                <button className="apply-job-btn">Apply Now ΓåÆ</button>
               </div>
             </div>
 
@@ -216,39 +189,28 @@ export default function Home() {
                   Move customer vehicles safely. Valid driver's license
                   required. Good driving record essential.
                 </p>
-                <div className="job-badge">🚗 $16-22/hr + tips</div>
-                <button className="apply-job-btn" onClick={() => handleApplyClick({_id: '507f1f77bcf86cd799439015', title: 'Driver / Valet'})}>Apply Now →</button>
+                <div className="job-badge">≡ƒÜù $16-22/hr + tips</div>
+                <button className="apply-job-btn">Apply Now ΓåÆ</button>
               </div>
             </div>
-            
-            {/* Dynamic Listings from DB */}
-            {listings.map(job => (
-              <div key={job._id} className="job-card-glass">
-                <img
-                  src={`https://placehold.co/400x200/2563EB/white?text=${encodeURIComponent(job.title)}`}
-                  alt={job.title}
-                  className="job-image"
-                />
-                <div className="job-content">
-                  <h3>{job.title}</h3>
-                  <p>{job.description}</p>
-                  {job.salary && <div className="job-badge">✨ {job.salary}</div>}
-                  <button className="apply-job-btn" onClick={() => handleApplyClick(job)}>Apply Now →</button>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
-
+     
         {/* STATS SECTION */}
         <section className="stats">
+
+     
+
           <div className="card">
             <div className="icon blue">
               <FileText />
             </div>
+
             <h2>24</h2>
             <h3>Applied</h3>
+
             <p>Keep applying consistently.</p>
+
             <div className="line blue-line"></div>
           </div>
 
@@ -256,9 +218,12 @@ export default function Home() {
             <div className="icon green">
               <Target />
             </div>
+
             <h2>8</h2>
             <h3 className="green-text">Interviews</h3>
+
             <p>Companies are noticing you.</p>
+
             <div className="line green-line"></div>
           </div>
 
@@ -266,9 +231,12 @@ export default function Home() {
             <div className="icon orange">
               <PartyPopper />
             </div>
+
             <h2>3</h2>
             <h3 className="orange-text">Offers</h3>
-            <p>You’re getting opportunities.</p>
+
+            <p>YouΓÇÖre getting opportunities.</p>
+
             <div className="line orange-line"></div>
           </div>
 
@@ -276,9 +244,12 @@ export default function Home() {
             <div className="icon red">
               <XCircle />
             </div>
+
             <h2>5</h2>
             <h3 className="red-text">Rejections</h3>
+
             <p>Every rejection is progress.</p>
+
             <div className="line red-line"></div>
           </div>
         </section>
@@ -289,23 +260,28 @@ export default function Home() {
             <div className="banner-icon">
               <CarFront size={40} />
             </div>
+
             <div>
               <h2>
                 Stay Organized. Stay Motivated.
                 <span> Get Hired.</span>
               </h2>
+
               <p>The smarter way to manage your car wash job applications.</p>
             </div>
           </div>
+
           <div className="banner-right">
             <div className="feature">
               <TrendingUp />
               <span>Visual Progress</span>
             </div>
+
             <div className="feature">
               <BadgeCheck />
               <span>Stay Motivated</span>
             </div>
+
             <div className="feature">
               <FileText />
               <span>Track Applications</span>
@@ -313,8 +289,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-
 
       <Footer />
     </>

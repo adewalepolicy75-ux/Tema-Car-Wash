@@ -10,7 +10,8 @@
 }
 
 body {
-  background: #f7f9ff;
+  background: var(--black);
+  color: var(--text-primary);
   overflow-x: hidden;
 }
 
@@ -18,6 +19,111 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 20px 60px;
+  position: relative;
+}
+
+.home::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.light-mode body {
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+.light-mode .home::before {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+}
+
+.light-mode .hero-left h1 {
+  color: #0F172A;
+}
+
+.light-mode .hero-left p {
+  color: #475569;
+}
+
+.light-mode .section-header h2 {
+  color: #0F172A;
+}
+
+.light-mode .job-card-glass {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .job-card-glass:hover {
+  background: #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.light-mode .job-content h3 {
+  color: #0F172A;
+}
+
+.light-mode .job-content p {
+  color: #475569;
+}
+
+.light-mode .card {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .card h2 {
+  color: #0F172A;
+}
+
+.light-mode .card p {
+  color: #64748B;
+}
+
+.light-mode .navbar {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .navbar h2 {
+  color: #2563EB !important;
+}
+
+.light-mode .links a {
+  color: #64748B !important;
+}
+
+.light-mode .links a:hover,
+.light-mode .links a.active {
+  color: #2563EB !important;
+}
+
+.dark-mode .navbar {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.dark-mode .navbar h2 {
+  color: #0F172A !important;
+}
+
+.dark-mode .links a {
+  color: #475569 !important;
+}
+
+.dark-mode .links a:hover,
+.dark-mode .links a.active {
+  color: #2563EB !important;
 }
 
 /* NAVBAR */
@@ -108,9 +214,10 @@ body {
 .hero-left h1 {
   font-size: 65px;
   line-height: 1.1;
-  color: #0f172a;
+  color: var(--text-primary);
   font-weight: 850;
   margin-bottom: 25px;
+  letter-spacing: -0.03em;
 }
 
 .hero-left h1 span {
@@ -120,7 +227,7 @@ body {
 .hero-left p {
   font-size: 22px;
   line-height: 1.7;
-  color: #475569;
+  color: var(--text-secondary);
   max-width: 700px;
   margin-bottom: 35px;
 }
@@ -193,15 +300,17 @@ body {
 }
 
 .card {
-  background: white;
-  padding: 30px;
+  background: var(--surface);
+  padding: 32px;
   border-radius: 28px;
-  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
-  transition: 0.3s;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .icon {
@@ -242,7 +351,7 @@ body {
 .card h2 {
   font-size: 50px;
   margin-bottom: 10px;
-  color: #0f172a;
+  color: #F8FAFC;
 }
 
 .card h3 {
@@ -401,8 +510,8 @@ body {
 
 /* Job Listings Section */
 .job-listings {
-  padding: 60px 24px;
-  background: #F8FAFC;
+  padding: 80px 24px;
+  background: transparent;
 }
 
 .dark-mode .job-listings {
@@ -416,8 +525,8 @@ body {
 
 .section-header h2 {
   font-size: 32px;
-  font-weight: bold;
-  color: #0F172A;
+  font-weight: 800;
+  color: #F8FAFC;
   margin-bottom: 12px;
 }
 
@@ -443,20 +552,19 @@ body {
 }
 
 .job-card-glass {
-  background: white;
-  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.dark-mode .job-card-glass {
-  background: #1E293B;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-card);
 }
 
 .job-card-glass:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .job-image {
@@ -471,9 +579,9 @@ body {
 
 .job-content h3 {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 10px;
-  color: #0F172A;
+  color: #F8FAFC;
 }
 
 .dark-mode .job-content h3 {

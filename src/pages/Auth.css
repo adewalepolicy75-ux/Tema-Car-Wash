@@ -1,0 +1,244 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), 
+              url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+}
+
+/* Remove theme-specific overrides for auth background */
+.light-mode .auth-container,
+.dark-mode .auth-container {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), 
+              url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Alternative: Use a car wash related background */
+.auth-container.carwash-bg {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(30, 64, 175, 0.85)), 
+              url('/images/carwash-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay effect */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.dark-mode .auth-card {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-logo .logo-icon {
+  width: 60px;
+  height: 60px;
+  background: #2563EB;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.auth-logo h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0F172A;
+}
+
+.dark-mode .auth-logo h1 {
+  color: #F8FAFC;
+}
+
+.auth-logo p {
+  color: #64748B;
+  margin-top: 8px;
+}
+
+.dark-mode .auth-logo p {
+  color: #94A3B8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #0F172A;
+}
+
+.dark-mode .form-group label {
+  color: #F8FAFC;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dark-mode .form-group input {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+.auth-btn {
+  background: #2563EB;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.auth-btn:hover {
+  background: #1D4ED8;
+  transform: scale(1.02);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  color: #64748B;
+}
+
+.auth-footer a {
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background: #FEE2E2;
+  color: #DC2626;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.success-message {
+  background: #D1FAE5;
+  color: #059669;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 768px) { 
+  .auth-card {
+    padding: 32px 24px;
+  }
+}
+
+.home-icon-btn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #2563EB;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.home-icon-btn:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .home-icon-btn {
+  background: rgba(30, 41, 59, 0.95);
+  color: #60A5FA;
+}
+
+.dark-mode .home-icon-btn:hover {
+  background: #1E293B;
+}
