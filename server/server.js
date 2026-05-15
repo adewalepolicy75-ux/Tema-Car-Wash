@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -25,8 +26,16 @@ app.use('/api/jobs', jobRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/listings', listingRoutes);
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Job Tracker API is running!' });
+// Static files for frontend
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// SPA Routing: Redirect all non-API requests to index.html
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+  } else {
+    res.status(404).json({ message: 'API route not found' });
+  }
 });
 
 const PORT = process.env.PORT || 5000;
