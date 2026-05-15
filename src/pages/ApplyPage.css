@@ -223,5 +223,17 @@
 @media (max-width: 640px) {
   .liquid-glass-card {
     padding: 30px 20px;
+    border-radius: 20px;
+  }
+  .job-summary h1 {
+    font-size: 22px;
+  }
+  .glass-input {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .submit-btn {
+    padding: 14px;
+    font-size: 15px;
   }
 }

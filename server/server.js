@@ -11,6 +11,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Request logger for debugging
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    console.log(`${req.method} ${req.path}`);
+  }
+  next();
+});
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ MongoDB Atlas connected'))
   .catch(err => console.log('❌ MongoDB error:', err));

@@ -137,6 +137,73 @@
   }
 }
 
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.light-mode .mobile-menu a {
+  color: #94A3B8;
+}
+
+.dark-mode .mobile-menu a {
+  color: #64748B;
+}
+
+.light-mode .mobile-menu a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.dark-mode .mobile-menu a:hover {
+  background: #F1F5F9;
+  color: #2563EB;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.light-mode .logout-btn {
+  color: #EF4444;
+}
+
+.dark-mode .logout-btn {
+  color: #EF4444;
+}
+
+.mobile-theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.light-mode .mobile-theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.dark-mode .mobile-theme-toggle {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+
 .theme-toggle-btn {
   width: 36px;
   height: 36px;
